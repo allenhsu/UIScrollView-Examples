@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g4v-Oh-mtt">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="b5K-g4-UCo">
+            <objects>
+                <navigationController id="g4v-Oh-mtt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DG2-s9-2pU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="HOU-Sv-ntK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7U-OU-rbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410" y="420"/>
+        </scene>
+        <!--Miao-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="175" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dKe-D1-2Cl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="180" id="4NA-8D-7Ep" customClass="GLImageCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4NA-8D-7Ep" id="It7-VV-Cfq">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jru-t1-hd2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Jru-t1-hd2" secondAttribute="bottom" id="4al-PV-RJM"/>
+                                                <constraint firstItem="Jru-t1-hd2" firstAttribute="top" secondItem="It7-VV-Cfq" secondAttribute="top" id="88q-95-yRX"/>
+                                                <constraint firstItem="Jru-t1-hd2" firstAttribute="leading" secondItem="It7-VV-Cfq" secondAttribute="leading" id="VcE-YR-Cq8"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jru-t1-hd2" secondAttribute="trailing" id="ste-Ux-mFH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoView" destination="Jru-t1-hd2" id="hy7-wh-PYr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="chy-ni-X7k"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="qvj-iM-qX9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dKe-D1-2Cl" secondAttribute="trailing" id="Dvg-q4-Ybh"/>
+                            <constraint firstItem="dKe-D1-2Cl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="oHO-TM-zZ0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="dKe-D1-2Cl" secondAttribute="bottom" id="oJ8-NM-2c7"/>
+                            <constraint firstItem="dKe-D1-2Cl" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="yDL-JL-CiC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Miao" id="QAQ-oL-tDz">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="sPp-Zk-tAl">
+                            <connections>
+                                <action selector="didClickRefreshButton:" destination="vXZ-lx-hvc" id="prL-7d-VSz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dKe-D1-2Cl" id="SNX-9S-xsM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
