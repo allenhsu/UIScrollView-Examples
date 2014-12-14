@@ -412,6 +412,7 @@
 				9FE68D421A3C4D440077B885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FE68D431A3C4D440077B885 /* Build configuration list for PBXNativeTarget "DelegateTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				9FE68D451A3C4D440077B885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

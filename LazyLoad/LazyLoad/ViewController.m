@@ -114,7 +114,7 @@
     
     NSDictionary *obj = [self objectForRow:indexPath.row];
     NSURL *targetURL = [NSURL URLWithString:[obj stringForKey:@"hoverURL"]];
-    NSLog(@"%@ %@", self.tableView.dragging ? @"dragging":@"", self.tableView.decelerating ? @"decelerating":@"");
+//    NSLog(@"%@ %@", self.tableView.dragging ? @"dragging":@"", self.tableView.decelerating ? @"decelerating":@"");
     if (![[cell.photoView sd_imageURL] isEqual:targetURL]) {
         cell.photoView.alpha = 0.0;
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
