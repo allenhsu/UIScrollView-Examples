@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nyc" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-Bo-de8" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="2625" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rJ8-Bo-de8" secondAttribute="height" multiplier="420:96" id="gSd-Lr-fnh"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbm-ct-als" userLabel="Content Layer">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odG-L6-Ya5" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="odG-L6-Ya5" secondAttribute="trailing" id="8O5-uG-vsC"/>
+                                    <constraint firstItem="odG-L6-Ya5" firstAttribute="top" secondItem="hbm-ct-als" secondAttribute="top" id="Dwk-oy-0cq"/>
+                                    <constraint firstAttribute="bottom" secondItem="odG-L6-Ya5" secondAttribute="bottom" id="Oam-86-Cek"/>
+                                    <constraint firstItem="odG-L6-Ya5" firstAttribute="height" secondItem="hbm-ct-als" secondAttribute="height" id="WaR-aE-mJc"/>
+                                    <constraint firstItem="odG-L6-Ya5" firstAttribute="width" secondItem="hbm-ct-als" secondAttribute="width" id="gGB-V0-gGk"/>
+                                    <constraint firstItem="odG-L6-Ya5" firstAttribute="leading" secondItem="hbm-ct-als" secondAttribute="leading" id="igX-aV-E4a"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGY-Ql-EiB" userLabel="Title Layer">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7D-Dc-Hda" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Q7D-Dc-Hda" secondAttribute="bottom" id="5Fq-Ep-xZE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q7D-Dc-Hda" secondAttribute="trailing" id="FsH-HM-9rK"/>
+                                    <constraint firstItem="Q7D-Dc-Hda" firstAttribute="top" secondItem="uGY-Ql-EiB" secondAttribute="top" id="Non-1m-Nqx"/>
+                                    <constraint firstItem="Q7D-Dc-Hda" firstAttribute="height" secondItem="uGY-Ql-EiB" secondAttribute="height" id="hjl-QA-FuV"/>
+                                    <constraint firstItem="Q7D-Dc-Hda" firstAttribute="leading" secondItem="uGY-Ql-EiB" secondAttribute="leading" id="z9t-JV-7F8"/>
+                                    <constraint firstItem="Q7D-Dc-Hda" firstAttribute="width" secondItem="uGY-Ql-EiB" secondAttribute="width" id="zD5-Fm-BN2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="lf4-ho-71d"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uGY-Ql-EiB" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="4qG-Vv-oWo"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rJ8-Bo-de8" secondAttribute="bottom" id="Iru-j8-U2G"/>
+                            <constraint firstItem="rJ8-Bo-de8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JX4-G5-sLN"/>
+                            <constraint firstAttribute="trailing" secondItem="hbm-ct-als" secondAttribute="trailing" constant="-200" id="Mn7-M3-6T3"/>
+                            <constraint firstItem="rJ8-Bo-de8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="OBi-gh-AmA"/>
+                            <constraint firstItem="hbm-ct-als" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Pgl-1n-583"/>
+                            <constraint firstItem="hbm-ct-als" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ye3-0m-i8W"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="uGY-Ql-EiB" secondAttribute="bottom" id="cfY-TY-1M3"/>
+                            <constraint firstItem="uGY-Ql-EiB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kPr-cf-EMe"/>
+                            <constraint firstAttribute="trailing" secondItem="uGY-Ql-EiB" secondAttribute="trailing" id="vPw-ar-Vhf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hbm-ct-als" secondAttribute="bottom" id="yDJ-vJ-PK6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="rJ8-Bo-de8" id="rD7-bG-5LX"/>
+                        <outlet property="contentScrollView" destination="hbm-ct-als" id="Sa9-ZQ-ZRW"/>
+                        <outlet property="contentView" destination="odG-L6-Ya5" id="9gE-2g-nrP"/>
+                        <outlet property="contentWidthConstraint" destination="gGB-V0-gGk" id="0Mv-yn-Sw6"/>
+                        <outlet property="titleContentView" destination="Q7D-Dc-Hda" id="E6g-PQ-hID"/>
+                        <outlet property="titleScrollView" destination="uGY-Ql-EiB" id="tfx-Oh-yJ3"/>
+                        <outlet property="titleWidthConstraint" destination="zD5-Fm-BN2" id="cie-Pe-sLG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nyc" width="4200" height="960"/>
+    </resources>
+</document>
