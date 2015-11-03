@@ -46,8 +46,9 @@
 
 - (void)fetchDataFromServer
 {
-    static NSString *apiURL = @"http://image.baidu.com/i?tn=resultjson_com&word=cat&rn=60";
+    static NSString *apiURL = @"http://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ie=utf-8&oe=utf-8&word=cat&queryWord=cat";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     [manager GET:apiURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Request succeeded");
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
