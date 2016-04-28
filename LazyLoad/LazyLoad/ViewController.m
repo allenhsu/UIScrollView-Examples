@@ -46,13 +46,19 @@
 
 - (void)fetchDataFromServer
 {
-    static NSString *apiURL = @"http://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ie=utf-8&oe=utf-8&word=cat&queryWord=cat";
+    static NSString *apiURL = @"http://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ie=utf-8&oe=utf-8&word=cat&queryWord=dog";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    AFHTTPResponseSerializer *serializer = [AFHTTPResponseSerializer serializer];
+    [serializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    manager.responseSerializer = serializer;
     [manager GET:apiURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Request succeeded");
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            NSArray *originalData = [responseObject arrayForKey:@"data"];
+        NSString *responseString = [operation.responseString stringByReplacingOccurrencesOfString:@"\\'" withString:@"'"];
+        NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error;
+        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if ([responseDictionary isKindOfClass:[NSDictionary class]]) {
+            NSArray *originalData = [responseDictionary arrayForKey:@"data"];
             NSMutableArray *data = [NSMutableArray array];
             for (NSDictionary *item in originalData) {
                 if ([item isKindOfClass:[NSDictionary class]] && [[item stringForKey:@"hoverURL"] length] > 0) {
